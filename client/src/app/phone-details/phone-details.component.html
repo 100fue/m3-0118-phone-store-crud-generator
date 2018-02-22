@@ -1,0 +1,27 @@
+<h1> Phone details </h1>
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="phone">
+  <div class="phone-thumbnail">
+    <img height="300" [src]="phone.image" />
+  </div>
+
+  <div class="phone-info">
+    <h2> {{ phone.name }}&nbsp;</h2>
+    <h3> {{ phone.brand }} </h3>
+
+    <div *ngIf="phone.specs.length">
+      <h4> Features </h4>
+      <ul>
+        <li *ngFor="let spec of phone.specs"> {{ spec&nbsp;}} </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h1>ALL PHONES HAVE {{num_stars}} stars</h1>
+<div>
+  <img *ngFor="let i of ' '.repeat(num_stars).split('')" width="20" src="data:image/png;base64,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" alt="">
+</div>
+<button (click)="deletePhone()">Delete</button>
+<button (click)="addStar()">+1</button>

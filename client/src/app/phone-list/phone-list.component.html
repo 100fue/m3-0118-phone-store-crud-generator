@@ -1,0 +1,11 @@
+
+<div class="parent">
+    <div class="el" *ngFor="let phone of phoneList">
+        <a [routerLink]="['/phone',phone._id]">
+            <img [src]="phone.image"  height="200"/>
+        </a>
+        <h3> {{ phone.name }} </h3>
+        <p> {{ phone.brand }} </p>
+        <a [routerLink]="['phone', phone._id]"> View Details </a>
+    </div>
+</div>
